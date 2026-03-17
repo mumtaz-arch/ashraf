@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ─── Enums ───────────────────────────────────────────
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  REJECTED
+  CANCELLED
+  COMPLETED
+  RESCHEDULED
+}
+
+// ─── Models ──────────────────────────────────────────
+
+model Service {
+  id              String   @id @default(uuid())
+  name            String
+  slug            String   @unique
+  description     String?
+  price           Decimal  @db.Decimal(10, 2)
+  durationMinutes Int
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  bookings Booking[]
+
+  @@index([isActive])
+}
+
+model AvailabilitySlot {
+  id        String   @id @default(uuid())
+  date      DateTime @db.Date
+  startTime String   // "HH:mm" format, e.g. "09:00"
+  endTime   String   // "HH:mm" format, e.g. "10:30"
+  isBlocked Boolean  @default(false)
+  note      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  bookings Booking[]
+
+  @@unique([date, startTime, endTime])
+  @@index([date, isBlocked])
+}
+
+model Booking {
+  id            String           @id @default(uuid())
+  referenceCode String           @unique
+  customerName  String
+  customerPhone String
+  customerEmail String?
+  serviceId     String
+  service       Service          @relation(fields: [serviceId], references: [id])
+  slotId        String
+  slot          AvailabilitySlot @relation(fields: [slotId], references: [id])
+  bookingDate   DateTime         @db.Date
+  startTime     String           // Denormalized from slot for historical record
+  status        BookingStatus    @default(PENDING)
+  customerNote  String?
+  adminNote     String?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  @@index([status])
+  @@index([bookingDate])
+  @@index([slotId, status])
+}
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         String   @default("admin")
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model PhotographerProfile {
+  id        String   @id @default(uuid())
+  name      String
+  title     String   // e.g. "Professional Wedding Photographer"
+  titleEn   String?
+  bio       String   @db.Text
+  bioEn     String?  @db.Text
+  imageUrl  String?  // Avatar / Profile Photo
+  logoUrl   String?  // Navbar Logo / Icon
+  updatedAt DateTime @updatedAt
+}
+
+model PortfolioItem {
+  id            String   @id @default(uuid())
+  title         String
+  titleEn       String?
+  description   String?  @db.Text
+  descriptionEn String?  @db.Text
+  imageUrl      String
+  category      String?  // e.g. "Wedding", "Product"
+  orientation   String   @default("square") // "landscape", "portrait", "square"
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}

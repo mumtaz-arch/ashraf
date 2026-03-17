@@ -1,0 +1,71 @@
+{
+  "common": {
+    "siteName": "Ashraf",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "submit": "Submit",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "actions": "Actions"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "profile": "Profile",
+    "bookNow": "Book Now",
+    "admin": "Admin"
+  },
+  "footer": {
+    "description": "Professional photography booking made simple. Capture your special moments with us.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "landing": {
+    "hero": {
+      "title": "Capture Your Special Moments",
+      "subtitle": "Professional photography booking made simple. Browse packages, pick your date, and book your session in minutes.",
+      "ctaBrowse": "Browse Packages",
+      "ctaBook": "Book Now"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": { "title": "Choose a Service", "desc": "Select the photography package that fits your needs." },
+      "step2": { "title": "Pick Date & Time", "desc": "View live availability and select your preferred slot." },
+      "step3": { "title": "Confirm Booking", "desc": "Fill in your details and complete your booking instantly." }
+    },
+    "trustPoints": {
+      "p1": "Experienced Photographer",
+      "p2": "HD Image Quality",
+      "p3": "Instant Booking"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Choose the perfect package for your needs",
+    "empty": "No services found",
+    "bookButton": "Book Now"
+  },
+  "booking": {
+    "title": "Book a Session",
+    "subtitle": "Fill out the form below to book your photography session.",
+    "form": {
+      "service": "Select Service",
+      "date": "Select Date",
+      "time": "Select Time",
+      "name": "Full Name",
+      "phone": "WhatsApp Number",
+      "email": "Email (Optional)",
+      "note": "Session Notes (Optional)",
+      "submit": "Submit Booking"
+    },
+    "success": {
+      "title": "Booking Submitted!",
+      "message": "Your booking request has been submitted successfully. We will review and contact you shortly.",
+      "refCode": "Reference Code:",
+      "homeButton": "Back to Home"
+    }
+  }
+}

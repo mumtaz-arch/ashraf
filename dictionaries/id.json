@@ -1,0 +1,71 @@
+{
+  "common": {
+    "siteName": "Ashraf",
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "submit": "Kirim",
+    "back": "Kembali",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "actions": "Aksi"
+  },
+  "nav": {
+    "home": "Beranda",
+    "services": "Layanan",
+    "profile": "Profil",
+    "bookNow": "Pesan Sekarang",
+    "admin": "Admin"
+  },
+  "footer": {
+    "description": "Pemesanan fotografi profesional menjadi mudah. Abadikan momen spesial Anda bersama kami.",
+    "quickLinks": "Tautan Cepat",
+    "contact": "Kontak",
+    "rights": "Hak cipta dilindungi undang-undang."
+  },
+  "landing": {
+    "hero": {
+      "title": "Abadikan Momen Spesial Anda",
+      "subtitle": "Pemesanan fotografi profesional menjadi mudah. Jelajahi paket, pilih tanggal Anda, dan pesan sesi Anda dalam hitungan menit.",
+      "ctaBrowse": "Jelajahi Paket",
+      "ctaBook": "Pesan Sekarang"
+    },
+    "howItWorks": {
+      "title": "Cara Kerja",
+      "step1": { "title": "Pilih Layanan", "desc": "Pilih paket fotografi yang sesuai dengan kebutuhan Anda." },
+      "step2": { "title": "Pilih Tanggal & Waktu", "desc": "Lihat ketersediaan waktu secara langsung dan pilih slot Anda." },
+      "step3": { "title": "Konfirmasi Pemesanan", "desc": "Isi detail Anda dan selesaikan pemesanan secara instan." }
+    },
+    "trustPoints": {
+      "p1": "Fotografer Berpengalaman",
+      "p2": "Kualitas Gambar HD",
+      "p3": "Pemesanan Instan"
+    }
+  },
+  "services": {
+    "title": "Layanan Kami",
+    "subtitle": "Pilih paket yang sempurna untuk kebutuhan Anda",
+    "empty": "Tidak ada layanan yang ditemukan",
+    "bookButton": "Pesan Sekarang"
+  },
+  "booking": {
+    "title": "Pesan Sesi",
+    "subtitle": "Isi formulir di bawah ini untuk memesan sesi fotografi Anda.",
+    "form": {
+      "service": "Pilih Layanan",
+      "date": "Pilih Tanggal",
+      "time": "Pilih Waktu",
+      "name": "Nama Lengkap",
+      "phone": "Nomor WhatsApp",
+      "email": "Email (Opsional)",
+      "note": "Catatan Terkait Sesi (Opsional)",
+      "submit": "Kirim Pemesanan"
+    },
+    "success": {
+      "title": "Pemesanan Dikirim!",
+      "message": "Permintaan pemesanan Anda telah berhasil dikirim. Kami akan meninjau dan menghubungi Anda segera.",
+      "refCode": "Kode Referensi:",
+      "homeButton": "Kembali ke Beranda"
+    }
+  }
+}
